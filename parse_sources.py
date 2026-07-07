@@ -36,6 +36,8 @@ def _clean(text: str | None) -> str:
     if not text:
         return ""
     text = html.unescape(_TAG_RE.sub(" ", text))
+    # Typografische Normalisierung: Geviertstrich -> Halbgeviertstrich (deutscher Satz)
+    text = text.replace("—", "–")
     return re.sub(r"\s+", " ", text).strip()
 
 
@@ -58,6 +60,7 @@ class _TextExtraktor(HTMLParser):
 
     def _abschliessen(self):
         text = re.sub(r"\s+", " ", "".join(self._puffer)).strip()
+        text = text.replace("—", "–")
         if len(text) > 1:
             self.absaetze.append({"art": self._art, "text": text})
         self._puffer = []
