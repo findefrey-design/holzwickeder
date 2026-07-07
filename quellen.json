@@ -1,0 +1,28 @@
+{
+  "kommentar": "Gemeinsame Quellenliste fuer fetch.ps1 (Windows/Firmennetz) und fetch.py (Cloud/Linux). Beide Fetcher MUESSEN dieselbe data/-Struktur erzeugen.",
+  "wetter_url": "https://api.open-meteo.com/v1/forecast?latitude=51.617&longitude=7.617&current=temperature_2m,apparent_temperature,weather_code,wind_speed_10m,relative_humidity_2m&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,sunrise,sunset&hourly=temperature_2m,weather_code,precipitation_probability&forecast_days=5&timezone=Europe%2FBerlin",
+  "quellen": [
+    { "name": "news_welt",            "url": "https://www.tagesschau.de/api2u/news?ressort=ausland",   "ext": "json" },
+    { "name": "news_de",              "url": "https://www.tagesschau.de/api2u/news?ressort=inland",    "ext": "json" },
+    { "name": "news_wirtschaft",      "url": "https://www.tagesschau.de/api2u/news?ressort=wirtschaft","ext": "json" },
+    { "name": "lokal_nordstadtblogger","url": "https://www.nordstadtblogger.de/feed/",                 "ext": "xml" },
+    { "name": "lokal_rundblick_unna", "url": "https://rundblick-unna.de/feed/",                        "ext": "xml" },
+    { "name": "lokal_wdr_ticker",     "url": "https://www.wdr.de/xml/newsticker.rdf",                  "ext": "xml" },
+    { "name": "lokal_ruhrnachrichten","url": "https://www.ruhrnachrichten.de/feed/",                   "ext": "xml" },
+    { "name": "lokal_hellweger",      "url": "https://www.hellwegeranzeiger.de/feed/",                 "ext": "xml" },
+    { "name": "sport_kicker",         "url": "https://newsfeed.kicker.de/news/aktuell",                "ext": "xml" },
+    { "name": "sport_bvb_kicker",     "url": "https://newsfeed.kicker.de/team/borussia-dortmund",      "ext": "xml" },
+    { "name": "sport_sportschau",     "url": "https://www.sportschau.de/index~rss2.xml",               "ext": "xml" },
+    { "name": "sport_bl_tabelle",     "url": "https://api.openligadb.de/getbltable/bl1/2025",          "ext": "json" },
+    { "name": "sport_bl_spiele",      "url": "https://api.openligadb.de/getmatchdata/bl1",             "ext": "json" },
+    { "name": "fx_kurse",             "url": "https://api.frankfurter.dev/v1/latest?base=EUR&symbols=USD,GBP,CHF,JPY,TRY,PLN", "ext": "json" },
+    { "name": "gold",                 "url": "https://api.gold-api.com/price/XAU",                     "ext": "json" },
+    { "name": "silber",               "url": "https://api.gold-api.com/price/XAG",                     "ext": "json" },
+    { "name": "krypto",               "url": "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum&vs_currencies=eur,usd&include_24hr_change=true", "ext": "json" },
+    { "name": "horoskop",             "url": "https://horoscope-app-api.vercel.app/api/v1/get-horoscope/daily?sign=pisces&day=today", "ext": "json" },
+    { "name": "tech_heise",           "url": "https://www.heise.de/rss/heise-atom.xml",                "ext": "xml" }
+  ],
+  "boerse_symbole": ["^GDAXI", "^GSPC", "^IXIC", "AAPL", "NVDA", "MSFT", "SAP.DE", "SIE.DE", "ASML", "VWCE.DE", "EUNL.DE"],
+  "volltexte": { "news_welt": 10, "news_de": 10, "news_wirtschaft": 6 },
+  "hn_top": 20
+}

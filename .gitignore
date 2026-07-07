@@ -1,0 +1,5 @@
+# Tagesdaten werden bei jedem Lauf frisch erzeugt
+data/
+ausgaben/
+zeitung.html
+__pycache__/
