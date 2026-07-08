@@ -13,6 +13,11 @@ Dieses Repository baut eine persönliche Tageszeitung als selbst-enthaltene HTML
   - Windows-Firmenrechner: `& .\fetch.ps1` (Python-TLS scheitert dort an der
     Zertifikats-Interception; Invoke-WebRequest nutzt den Windows-Speicher)
   - Beide lesen `quellen.json` und erzeugen identische `data/`-Strukturen.
+- **Cloud-Sessions: Egress-Allowlist!** Schlagen die Abrufe mit „egress policy"/Blockierung
+  fehl, fehlt der Umgebung die Netzwerk-Freigabe. Das kann NUR der User in den
+  Umgebungs-Einstellungen lösen (Network access -> Custom/Full); Domain-Liste und
+  Klickweg stehen in README.md, Abschnitt „Netzwerk in der Cloud". Dann sauber abbrechen
+  und den User genau dorthin verweisen - nicht mit halben Daten bauen.
 - Aufmacher-Bild (16x9-960 aus dem tagesschau-`teaserImage`) nach `data/aufmacher.jpg`
   laden: in der Cloud mit Python/urllib, auf Windows mit Invoke-WebRequest.
 - Nach `python build.py` MUSS die Verifikation aus README Punkt 5 laufen

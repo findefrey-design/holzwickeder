@@ -121,6 +121,15 @@ def main():
         "ok": ok, "failed": fail, "sources": report,
     }, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"\n{ok} OK, {fail} FAIL -> fetch-report.json")
+    if fail > ok:
+        print(
+            "\n!!! Die meisten Quellen sind fehlgeschlagen. In einer Cloud-Session ist das"
+            "\n!!! fast immer die Egress-Policy der Sandbox (Netzwerk-Allowlist)."
+            "\n!!! Loesung: claude.ai/App -> Umgebung bearbeiten (Zahnrad) -> Network access ->"
+            "\n!!! 'Custom' mit der Domain-Liste aus README.md (Abschnitt 'Netzwerk in der Cloud')"
+            "\n!!! oder 'Full'. Ohne diese Freigabe kann keine Ausgabe gebaut werden."
+        )
+        sys.exit(1)
 
 
 if __name__ == "__main__":

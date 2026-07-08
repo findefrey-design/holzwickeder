@@ -714,6 +714,13 @@ JS = """
 
 def baue():
     LESER_TEMPLATES.clear()
+    report = json.loads((DATA / "fetch-report.json").read_text(encoding="utf-8")) if (DATA / "fetch-report.json").exists() else None
+    if not report or not report.get("ok"):
+        raise SystemExit(
+            "Abbruch: kein brauchbarer Datenbestand (fetch-report fehlt oder 0 Quellen OK).\n"
+            "Erst fetch.py/fetch.ps1 erfolgreich laufen lassen. In Cloud-Sessions:\n"
+            "Netzwerk-Allowlist noetig, siehe README.md Abschnitt 'Netzwerk in der Cloud'."
+        )
     q = ps.alle_quellen()
     cur = json.loads((DATA / "curated.json").read_text(encoding="utf-8"))
     jetzt = datetime.now()

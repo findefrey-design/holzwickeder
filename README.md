@@ -30,6 +30,45 @@ fonts/           UnifrakturMaguntia (Wortmarke), Playfair Display 700/900 (Schla
 
 Brotschrift ist bewusst System-Serif (Charter auf iOS, Georgia sonst) - kein Download nötig.
 
+## Netzwerk in der Cloud (Pflicht für /zeitung vom Handy)
+
+Cloud-Sessions (Claude-App/claude.ai auf diesem Repo) laufen in einer Sandbox mit
+Egress-Allowlist - ohne Freigabe werden alle Quellen-Abrufe blockiert („egress policy").
+Die Freigabe geht NUR über die Umgebungs-Einstellungen, nicht per Repo-Datei:
+
+Claude-App/claude.ai -> Cloud-Symbol (Umgebungs-Auswahl) -> Zahnrad an der Umgebung ->
+**Network access** -> **Custom** -> diese Domains eintragen (eine pro Zeile, Haken
+„include default list of common package managers" anlassen) - oder einfach **Full** wählen:
+
+```
+api.open-meteo.com
+*.tagesschau.de
+www.tagesschau.de
+images.tagesschau.de
+*.nordstadtblogger.de
+www.nordstadtblogger.de
+rundblick-unna.de
+*.rundblick-unna.de
+www.wdr.de
+*.ruhrnachrichten.de
+www.ruhrnachrichten.de
+*.hellwegeranzeiger.de
+www.hellwegeranzeiger.de
+newsfeed.kicker.de
+www.sportschau.de
+api.openligadb.de
+api.frankfurter.dev
+api.gold-api.com
+api.coingecko.com
+query1.finance.yahoo.com
+horoscope-app-api.vercel.app
+www.heise.de
+hacker-news.firebaseio.com
+```
+
+Diagnose: Schlägt der Fetch mehrheitlich fehl, bricht fetch.py mit genau diesem Hinweis
+ab; build.py verweigert den Bau ohne brauchbaren fetch-report (keine Geister-Ausgaben).
+
 ## Zugriffswege
 
 1. **Handy (Claude-App, GitHub-Repo verbunden):** `/zeitung` eingeben -> Cloud-Session
