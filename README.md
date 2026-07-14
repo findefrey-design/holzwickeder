@@ -6,7 +6,7 @@ Leser: genau einer. Erscheint täglich morgens.
 **Artifact-URL (IMMER auf dieselbe URL redeployen, Favicon 📰 beibehalten):**
 `https://claude.ai/code/artifact/a6b00225-e477-4386-a1f3-b73f139cf61c`
 
-**GitHub (privat, für die Claude-App am Handy):** `https://github.com/findefrey-design/holzwickeder`
+**GitHub (öffentlich — verifiziert 2026-07-09; für Claude-App am Handy + möglichen gh-pages-Versand):** `https://github.com/findefrey-design/holzwickeder`
 
 ## Architektur
 

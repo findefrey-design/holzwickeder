@@ -429,7 +429,7 @@ CSS = """
   --akzent: #a31f24; --plus: #1e6e42; --kachel: #efe9db;
   --kopf-h: 128px;
 }
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark-nie) {
   :root {
     --papier: #171512; --tinte: #e8e2d4; --grau: #9a9184; --linie: #353026;
     --akzent: #d4555a; --plus: #58b183; --kachel: #201d18;
